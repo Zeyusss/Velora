@@ -1,0 +1,168 @@
+<header>
+  <nav class="bg-(--main-color) w-full py-3 px-15">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-8">
+        <div class="relative px-1 border-x border-white">
+          <button
+            id="multiLevelDropdownButton"
+            data-dropdown-toggle="multi-dropdown"
+            class="text-white text-sm font-medium flex items-center gap-1 hover:opacity-80 cursor-pointer"
+          >
+            English
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="multi-dropdown"
+            class="absolute right-0 mt-2 z-20 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
+          >
+            <ul class="p-2 text-sm text-body font-medium">
+              <li>
+                <a
+                  href="#"
+                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                  >Arabic</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="relative px-1 border-x border-white">
+          <button
+            id="multiLevelDropdownButton"
+            data-dropdown-toggle="multi-dropdown"
+            class="text-white text-sm font-medium flex items-center gap-1 hover:opacity-80 cursor-pointer"
+          >
+            Country
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="multi-dropdown"
+            class="absolute right-0 mt-2 z-20 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
+          >
+            <ul class="p-2 text-sm text-body font-medium">
+              <li>
+                <a
+                  href="#"
+                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                  >Egypt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                  >England</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                  >UnitedStates</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span class="text-[12px] uppercase text-white">FREE SHIPPING FOR ALL ORDERS OF $150</span>
+      </div>
+      <div class="flex items-center space-x-8">
+        <span class="capitalize text-white cursor-pointer hover:underline">news letter</span>
+        <span class="capitalize text-white cursor-pointer hover:underline">faqs</span>
+        <span class="capitalize text-white cursor-pointer hover:underline">contact us</span>
+      </div>
+    </div>
+  </nav>
+  <nav class="bg-neutral-primary">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-2xl p-4">
+      <div class="flex items-center space-x-8">
+        <div class="flex items-center space-x-2">
+          <div>
+            <img src="/images/technology.svg" class="w-8" alt="" />
+          </div>
+          <div>
+            <strong class="text-sm">Call toll-free</strong>
+            <p class="text-sm">+73 099 321 312</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <div>
+            <img src="/images/handmade-questions.svg" class="w-8" alt="" />
+          </div>
+          <div>
+            <strong class="text-sm">any questions</strong>
+            <p class="text-sm">velora@made.com</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="/images/freshcart-logo.svg" alt="Flowbite Logo" />
+      </a>
+      <div class="flex items-center space-x-6 rtl:space-x-reverse">
+        <a href="" class="relative text-2xl"
+          ><i class="fa-regular fa-heart"></i>
+          <span
+            class="absolute -top-2 -right-2 bg-(--main-color) text-white text-xs px-2 py-0.5 rounded-full"
+          >
+            0
+          </span>
+        </a>
+        <a href="" class="relative text-2xl"
+          ><i class="fas fa-shopping-cart"></i>
+          <span
+            class="absolute -top-2 -right-2 bg-(--main-color) text-white text-xs px-2 py-0.5 rounded-full"
+          >
+            0
+          </span>
+        </a>
+        <a href="#" class="text-md uppercase">login / register</a>
+        <a href="#" class="text-md">SignOut</a>
+      </div>
+    </div>
+  </nav>
+  <nav class="bg-neutral-secondary-soft border-y border-default">
+    <div class="max-w-screen-2xl px-4 py-3 mx-auto">
+      <div class="flex items-center justify-center">
+        <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-lg">
+          <li>
+            <a
+              routerLink="/home"
+              routerLinkActive="bg-[#79B38A] p-1 rounded text-white"
+              class="text-heading"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/products"
+              routerLinkActive="bg-[#79B38A] p-1 rounded text-white"
+              class="text-heading"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/categories"
+              routerLinkActive="bg-[#79B38A] p-1 rounded text-white"
+              class="text-heading"
+              >Categories</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/brands"
+              routerLinkActive="bg-[#79B38A] p-1 rounded text-white"
+              class="text-heading"
+              >Brands</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,26 @@
+<section class="py-14">
+  <div class="container">
+    <!-- Main Title -->
+    <div class="text-center mb-10">
+      <span class="text-(--main-color) text-lg">Priceless Categories</span>
+      <h2 class="uppercase text-4xl my-5">FEATURED Categories</h2>
+      <p class="text-lg">Visit our shop to see our amazing Categories.</p>
+    </div>
+    <!-- Slider -->
+    <owl-carousel-o [options]="categoriesCustomOptions">
+      @for (category of categoriesList; track category._id) {
+      <ng-template carouselSlide [id]="category._id">
+        <div class="relative cursor-pointer">
+          <img class="h-[400px] rounded" [src]="category.image" [alt]="category.name" />
+          <div class="absolute inset-0 bg-black/10 rounded"></div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <h3 class="text-white bg-(--main-color) py-5 px-6 rounded text-xl whitespace-nowrap">
+              {{ category.name }}
+            </h3>
+          </div>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="py-14">
+  <div class="container">
+    <!-- Main Title -->
+    <div class="text-center">
+      <span class="text-(--main-color) text-lg">Priceless Products</span>
+      <h2 class="uppercase text-4xl my-5">FEATURED PRODUCTS</h2>
+      <p class="text-lg">Visit our shop to see amazing products from our designers.</p>
+    </div>
+    <!-- Products -->
+    <div class="grid sm:grid-cols-3 md:grid-cols-4 gap-10">
+      @for (product of productList.slice(0,8); track product._id) {
+      <app-card [product]="product" />
+      }
+    </div>
+  </div>
+</section>
