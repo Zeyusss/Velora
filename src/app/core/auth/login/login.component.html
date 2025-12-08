@@ -10,7 +10,7 @@
       <!-- Email Input -->
       <app-input
         [control]="loginForm.get('email')"
-        [inputType]="'text'"
+        [inputType]="'email'"
         [inputId]="'email'"
         [labelName]="'Email'"
       />
@@ -32,11 +32,16 @@
       </button>
     </form>
     <!-- Register -->
-    <div class="mt-5">
+    <div class="mt-5 flex items-center justify-between">
       <h3>
         Dont Have an Account ?
         <span class="text-blue-700 underline underline-offset-4"
           ><a routerLink="/register">Register Now</a></span
+        >
+      </h3>
+      <h3>
+        <span class="text-blue-700 underline underline-offset-4"
+          ><a routerLink="/forgotpassword">Forgot Your Password?</a></span
         >
       </h3>
     </div>

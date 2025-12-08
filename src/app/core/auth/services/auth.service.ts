@@ -13,14 +13,26 @@ export class AuthService {
   private readonly cookieService = inject(CookieService);
   private readonly router = inject(Router);
 
+  // Auth
   postSignUp(data: object): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/auth/signup`, data);
   }
   postSignIn(data: object): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/auth/signin`, data);
   }
+  // SignOut Func
   signOut(): void {
     this.cookieService.delete('token');
     this.router.navigate(['/login']);
+  }
+  // Reset Password
+  postForgotPassword(data: object): Observable<any> {
+    return this.httpClient.post(`${environment.baseUrl}/auth/forgotPasswords`, data);
+  }
+  postVerifyResetCode(data: object): Observable<any> {
+    return this.httpClient.post(`${environment.baseUrl}/auth/verifyResetCode`, data);
+  }
+  putResetPassword(data: object): Observable<any> {
+    return this.httpClient.put(`${environment.baseUrl}/auth/resetPassword`, data);
   }
 }

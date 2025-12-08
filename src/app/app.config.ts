@@ -13,6 +13,8 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { headersInterceptor } from './core/interceptors/headers/headers-interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { loadingInterceptor } from './core/interceptors/loading/loading-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,9 +22,9 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(withFetch(), withInterceptors([headersInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([headersInterceptor, loadingInterceptor])),
     provideAnimations(),
-    importProvidersFrom(CookieService),
+    importProvidersFrom(CookieService, NgxSpinnerModule),
     provideToastr(),
   ],
 };
