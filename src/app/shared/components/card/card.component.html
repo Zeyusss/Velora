@@ -4,25 +4,34 @@
     <div
       class="translate-y-[130%] group-hover/card:translate-y-0 absolute transition-translate duration-300 -translate-x-1/2 left-1/2 bottom-3 flex items-center space-x-8 bg-gray-400 px-8 py-3 rounded"
     >
+      <span class="relative group" (click)="$event.stopPropagation()">
+        <i class="fa-solid fa-magnifying-glass text-white text-2xl cursor-pointer"></i>
+        <span
+          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
+        >
+          Quick View
+        </span>
+      </span>
+      <span class="relative group" (click)="$event.stopPropagation()">
+        <i class="fa-regular fa-heart text-white text-2xl cursor-pointer"></i>
+        <span
+          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
+        >
+          Wishlist
+        </span>
+      </span>
       <span
-        ><i
-          (click)="$event.stopPropagation()"
-          class="fa-solid fa-magnifying-glass text-white text-2xl cursor-pointer"
-        ></i
-      ></span>
-      <span
-        ><i
-          (click)="$event.stopPropagation()"
-          class="fa-regular fa-heart text-white text-2xl cursor-pointer"
-        ></i
-      ></span>
-      <span
-        ><i
-          (click)="$event.stopPropagation()"
-          (click)="addProductToCart(product._id)"
-          class="fas fa-shopping-cart text-white text-2xl cursor-pointer"
-        ></i
-      ></span>
+        class="relative group"
+        (click)="$event.stopPropagation()"
+        (click)="addProductToCart(product._id)"
+      >
+        <i class="fas fa-shopping-cart text-white text-2xl cursor-pointer"></i>
+        <span
+          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
+        >
+          Add to Cart
+        </span>
+      </span>
     </div>
   </div>
   <div class="text-center flex flex-col gap-3">

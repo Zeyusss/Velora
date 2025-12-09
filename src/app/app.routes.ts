@@ -16,9 +16,9 @@ export const routes: Routes = [
     component: AnonLayoutComponent,
     canActivate: [isloggedinGuard],
     children: [
-      { path: 'login', component: LoginComponent, title: 'Login Page' },
-      { path: 'register', component: RegisterComponent, title: 'RegisterPage' },
-      { path: 'forgotpassword', component: ForgotpasswordComponent, title: 'ForgotPassword Page' },
+      { path: 'login', component: LoginComponent, title: 'Login ' },
+      { path: 'register', component: RegisterComponent, title: 'Register' },
+      { path: 'forgotpassword', component: ForgotpasswordComponent, title: 'ForgotPassword ' },
     ],
   },
   {
@@ -26,66 +26,66 @@ export const routes: Routes = [
     component: UserLayoutComponent,
     canActivate: [authGuard],
     children: [
-      { path: 'home', component: HomeComponent, title: 'Home Page' },
+      { path: 'home', component: HomeComponent, title: 'Home ' },
       {
         path: 'brands',
         loadComponent: () =>
           import('./features/brands/brands.component').then((c) => c.BrandsComponent),
-        title: 'Brands Page',
+        title: 'Brands ',
       },
       {
         path: 'cart',
         loadComponent: () => import('./features/cart/cart.component').then((c) => c.CartComponent),
-        title: 'Cart Page',
+        title: 'Cart ',
       },
       {
         path: 'categories',
         loadComponent: () =>
           import('./features/categories/categories.component').then((c) => c.CategoriesComponent),
-        title: 'Categories Page',
+        title: 'Categories ',
       },
       {
         path: 'checkout/:cartId',
         loadComponent: () =>
           import('./features/checkout/checkout.component').then((c) => c.CheckoutComponent),
-        title: 'checkout Page',
+        title: 'checkout ',
       },
       {
         path: 'products',
         loadComponent: () =>
           import('./features/products/products.component').then((c) => c.ProductsComponent),
-        title: 'Products Page',
+        title: 'Products ',
       },
       {
         path: 'details/:id',
         loadComponent: () =>
           import('./features/details/details.component').then((c) => c.DetailsComponent),
-        title: 'Details Page',
+        title: 'Details ',
       },
       {
         path: 'allorders',
         loadComponent: () =>
           import('./features/allorders/allorders.component').then((c) => c.AllordersComponent),
-        title: 'allorders Page',
+        title: 'allorders ',
       },
       {
         path: 'newsletter',
         loadComponent: () =>
           import('./features/newsletter/newsletter.component').then((c) => c.NewsletterComponent),
-        title: 'NewsLetter Page',
+        title: 'NewsLetter ',
       },
       {
         path: 'faq',
         loadComponent: () => import('./features/faq/faq.component').then((c) => c.FaqComponent),
-        title: 'FAQ Page',
+        title: 'FAQ ',
       },
       {
         path: 'contactus',
         loadComponent: () =>
           import('./features/contactus/contactus.component').then((c) => c.ContactusComponent),
-        title: 'ContactUs Page',
+        title: 'ContactUs ',
       },
     ],
   },
-  { path: '**', component: NotfoundComponent, title: 'NotFound Page' },
+  { path: '**', component: NotfoundComponent, title: 'NotFound ' },
 ];
