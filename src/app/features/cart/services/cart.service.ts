@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment.development';
@@ -8,6 +8,8 @@ import { environment } from '../../../../environments/environment.development';
 })
 export class CartService {
   private readonly httpClient = inject(HttpClient);
+
+  countNumber: BehaviorSubject<number> = new BehaviorSubject(0);
 
   postAddProductToCart(productId: string | null): Observable<any> {
     return this.httpClient.post(`${environment.baseUrl}/cart`, {

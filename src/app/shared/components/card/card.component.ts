@@ -21,6 +21,7 @@ export class CardComponent {
       next: (res) => {
         if (res.status === 'success') {
           this.toastrService.success(res.message);
+          this.cartService.countNumber.next(res.numOfCartItems);
         }
       },
       error: (err) => {

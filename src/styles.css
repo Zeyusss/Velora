@@ -60,3 +60,8 @@ body{
 .btn-main:hover {
   background-color: #11bd11;
 }
+
+.font-logo{
+    font-family: "Dancing Script", cursive;
+
+}

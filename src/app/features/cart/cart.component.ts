@@ -33,6 +33,7 @@ export class CartComponent implements OnInit {
       next: (res) => {
         this.userCartDetails = res.data;
         this.toastrService.warning('Product Deleted!');
+        this.cartService.countNumber.next(res.numOfCartItems);
       },
       error: (err) => {
         console.log(err);
@@ -54,6 +55,7 @@ export class CartComponent implements OnInit {
       next: (res) => {
         this.getLoggedUserCart();
         this.toastrService.warning('Cart Clear!');
+        this.cartService.countNumber.next(res.numOfCartItems);
       },
       error: (err) => {
         console.log(err);
