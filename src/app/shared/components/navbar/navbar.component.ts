@@ -1,4 +1,5 @@
 import { Component, inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { FlowbiteService } from '../../../core/services/flowbite/flowbite.service';
 import { initFlowbite } from 'flowbite';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -8,7 +9,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, NgClass],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -19,6 +20,7 @@ export class NavbarComponent implements OnInit {
   private readonly id = inject(PLATFORM_ID);
 
   count!: number;
+  isMobileMenuOpen = false;
 
   @Input({ required: true }) isLoggedIn: boolean = false;
 
@@ -30,6 +32,10 @@ export class NavbarComponent implements OnInit {
       this.getAllDataCart();
     }
     this.getCartNumber();
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
   getCartNumber(): void {

@@ -2,24 +2,29 @@
   <div class="relative group/card overflow-hidden">
     <img [src]="product.imageCover" class="w-full" [alt]="product.title" />
     <div
-      class="translate-y-[130%] group-hover/card:translate-y-0 absolute transition-translate duration-300 -translate-x-1/2 left-1/2 bottom-3 flex items-center space-x-8 bg-gray-400 px-8 py-3 rounded"
+      class="absolute left-1/2 -translate-x-1/2 bottom-3 flex items-center space-x-8 bg-gray-400 px-8 py-3 rounded md:translate-y-[130%] md:group-hover/card:translate-y-0 transition-transform duration-300"
     >
+      <!-- Quick View -->
       <span class="relative group" (click)="$event.stopPropagation()">
         <i class="fa-solid fa-magnifying-glass text-white text-2xl cursor-pointer"></i>
         <span
-          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
+          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
         >
           Quick View
         </span>
       </span>
+
+      <!-- Wishlist -->
       <span class="relative group" (click)="$event.stopPropagation()">
         <i class="fa-regular fa-heart text-white text-2xl cursor-pointer"></i>
         <span
-          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
+          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
         >
           Wishlist
         </span>
       </span>
+
+      <!-- Add to Cart -->
       <span
         class="relative group"
         (click)="$event.stopPropagation()"
@@ -27,19 +32,21 @@
       >
         <i class="fas fa-shopping-cart text-white text-2xl cursor-pointer"></i>
         <span
-          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
+          class="absolute left-1/2 -translate-x-1/2 bottom-8 opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 bg-black text-white text-sm px-2 py-1 rounded whitespace-nowrap"
         >
           Add to Cart
         </span>
       </span>
     </div>
   </div>
+
+  <!-- Product Info -->
   <div class="text-center flex flex-col gap-3">
     <h3 class="text-xl text-gray-500">{{ product.title | term }}</h3>
     <span class="text-[1rem] text-gray-400"> {{ product.category.name }} </span>
     <span class="text-[1rem]"
-      ><i class="fas fa-star text-yellow-300"></i> {{ product.ratingsAverage }}
-    </span>
+      ><i class="fas fa-star text-yellow-300"></i> {{ product.ratingsAverage }}</span
+    >
     <span class="text-xl text-(--main-color)"> {{ product.price }}$ </span>
   </div>
 </div>
