@@ -65,3 +65,8 @@ body{
     font-family: "Dancing Script", cursive;
 
 }
+.bg{
+  background-image:url('../public/images/finaly-banner-handmade-11-opt.webp');
+  background-position: center center;
+  background-size: cover;
+}

@@ -6,7 +6,7 @@ export const headersInterceptor: HttpInterceptorFn = (req, next) => {
   const cookieService = inject(CookieService);
 
   if (cookieService.check('token')) {
-    if (req.url.includes('cart') || req.url.includes('wishlish') || req.url.includes('order')) {
+    if (req.url.includes('cart') || req.url.includes('wishlist') || req.url.includes('order')) {
       req = req.clone({
         setHeaders: {
           token: cookieService.get('token'),

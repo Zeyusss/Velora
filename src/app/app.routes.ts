@@ -85,6 +85,12 @@ export const routes: Routes = [
           import('./features/contactus/contactus.component').then((c) => c.ContactusComponent),
         title: 'ContactUs ',
       },
+      {
+        path: 'wishlist',
+        loadComponent: () =>
+          import('./features/wishlist/wishlist.component').then((c) => c.WishlistComponent),
+        title: 'Wish List ',
+      },
     ],
   },
   { path: '**', component: NotfoundComponent, title: 'NotFound ' },

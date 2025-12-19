@@ -6,6 +6,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../../core/auth/services/auth.service';
 import { CartService } from '../../../features/cart/services/cart.service';
 import { isPlatformBrowser } from '@angular/common';
+import { WishlistService } from '../../../features/wishlist/services/wishlist.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,10 +18,12 @@ export class NavbarComponent implements OnInit {
   constructor(private flowbiteService: FlowbiteService) {}
   private readonly authService = inject(AuthService);
   private readonly cartService = inject(CartService);
+  private readonly wishlistService = inject(WishlistService);
   private readonly id = inject(PLATFORM_ID);
 
   count!: number;
   isMobileMenuOpen = false;
+  wishListCount!: number;
 
   @Input({ required: true }) isLoggedIn: boolean = false;
 
@@ -30,12 +33,20 @@ export class NavbarComponent implements OnInit {
     });
     if (isPlatformBrowser(this.id)) {
       this.getAllDataCart();
+      this.getAllWishListData();
     }
     this.getCartNumber();
+    this.getWishListNumber();
   }
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  getWishListNumber(): void {
+    this.wishlistService.wishListItems.subscribe({
+      next: (value) => (this.wishListCount = value),
+    });
   }
 
   getCartNumber(): void {
@@ -56,6 +67,17 @@ export class NavbarComponent implements OnInit {
       },
     });
   }
+  getAllWishListData(): void {
+    this.wishlistService.getLoggedInUserWish().subscribe({
+      next: (res) => {
+        this.wishlistService.wishListItems.next(res.data.length);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
   signOut(): void {
     this.authService.signOut();
   }

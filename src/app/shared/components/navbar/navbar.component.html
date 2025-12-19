@@ -5,74 +5,6 @@
     <div class="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
       <!-- Left: Language, Country, Promo -->
       <div class="hidden md:flex flex-wrap items-center gap-3 md:gap-8">
-        <div class="relative px-1 border-x border-white">
-          <button
-            id="languageDropdownButton"
-            data-dropdown-toggle="language-dropdown"
-            class="text-white text-sm font-medium flex items-center gap-1 hover:opacity-80 cursor-pointer"
-          >
-            English
-            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-width="2" d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div
-            id="language-dropdown"
-            class="absolute right-0 mt-2 z-20 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
-          >
-            <ul class="p-2 text-sm text-body font-medium">
-              <li>
-                <a
-                  href="#"
-                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                  >Arabic</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="relative px-1 border-x border-white">
-          <button
-            id="countryDropdownButton"
-            data-dropdown-toggle="country-dropdown"
-            class="text-white text-sm font-medium flex items-center gap-1 hover:opacity-80 cursor-pointer"
-          >
-            Country
-            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-width="2" d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div
-            id="country-dropdown"
-            class="absolute right-0 mt-2 z-20 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
-          >
-            <ul class="p-2 text-sm text-body font-medium">
-              <li>
-                <a
-                  href="#"
-                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                  >Egypt</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                  >England</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                  >UnitedStates</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <span class="text-[12px] uppercase text-white">FREE SHIPPING FOR ALL ORDERS OF $150</span>
       </div>
 
@@ -120,12 +52,13 @@
 
       <!-- Right: Icons / Auth -->
       <div class="flex items-center gap-6">
-        <a href="" class="relative text-2xl"
+        <a href="" class="relative text-2xl" routerLink="/wishlist"
           ><i class="fa-regular fa-heart"></i>
           <span
             class="absolute -top-2 -right-2 bg-(--main-color) text-white text-xs px-2 py-0.5 rounded-full"
-            >0</span
           >
+            {{ wishListCount }}
+          </span>
         </a>
         <a href="" class="relative text-2xl" routerLink="/cart"
           ><i class="fas fa-shopping-cart"></i>
